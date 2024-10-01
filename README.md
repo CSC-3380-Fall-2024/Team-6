@@ -8,4 +8,4 @@ Communications Lead         Harrison Robichaux
 Design Lead                 Jonathan Anderson
 
 ## Purpose
-The main purpose of this app is to 
+The main purpose of this app is to have a way to communicate what an altar server did wrong during a Mass.
