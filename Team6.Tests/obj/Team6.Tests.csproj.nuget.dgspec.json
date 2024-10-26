@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jasht\\OneDrive\\Desktop\\CSC 3380 Group Project\\Team-6\\Team6.Tests\\Team6.Tests.csproj": {}
+    "C:\\Users\\gamin\\OneDrive\\Documents\\GitHub\\Team-6\\Team6.Tests\\Team6.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jasht\\OneDrive\\Desktop\\CSC 3380 Group Project\\Team-6\\Team6.Tests\\Team6.Tests.csproj": {
+    "C:\\Users\\gamin\\OneDrive\\Documents\\GitHub\\Team-6\\Team6.Tests\\Team6.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jasht\\OneDrive\\Desktop\\CSC 3380 Group Project\\Team-6\\Team6.Tests\\Team6.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\gamin\\OneDrive\\Documents\\GitHub\\Team-6\\Team6.Tests\\Team6.Tests.csproj",
         "projectName": "Team6.Tests",
-        "projectPath": "C:\\Users\\jasht\\OneDrive\\Desktop\\CSC 3380 Group Project\\Team-6\\Team6.Tests\\Team6.Tests.csproj",
-        "packagesPath": "C:\\Users\\jasht\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jasht\\OneDrive\\Desktop\\CSC 3380 Group Project\\Team-6\\Team6.Tests\\obj\\",
+        "projectPath": "C:\\Users\\gamin\\OneDrive\\Documents\\GitHub\\Team-6\\Team6.Tests\\Team6.Tests.csproj",
+        "packagesPath": "C:\\Users\\gamin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gamin\\OneDrive\\Documents\\GitHub\\Team-6\\Team6.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jasht\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\gamin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -88,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
