@@ -25,6 +25,16 @@ namespace Team6.Data.Context
 
             var command = connection.CreateCommand();
             command.CommandText = @"
+                -- Users Table
+                CREATE TABLE IF NOT EXISTS Users (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Username TEXT NOT NULL UNIQUE,
+                    Email TEXT NOT NULL UNIQUE,
+                    PasswordHash TEXT NOT NULL,
+                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    LastLogin DATETIME
+                );
+
                 -- Calendar Events Table
                 CREATE TABLE IF NOT EXISTS CalendarEvents (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
