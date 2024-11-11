@@ -15,6 +15,17 @@ namespace Team6.Data.Repositories
 
         }
 
+        //get a user by their ID 
+        public async Task<User?> GetByIdAsync(int id)
+        {
+            using var connection = CreateConnection();
+            //execture the query asynchronously and get the first user where the username matches
+            return await connection.QueryFirstOrDefaultAsync<User>(
+                "SELECT * FROM Users WHERE Id = @Id",
+                new { Id = id }
+            );
+        }
+
         //get a user by their username 
         public async Task<User?> GetByUsernameAsync(string username)
         {
@@ -63,13 +74,13 @@ namespace Team6.Data.Repositories
         }
 
         // update the user's login time 
-        public async Task UpdateLastLoginAsync(int userId) 
+        public async Task UpdateLastLoginAsync(int id) 
         {
             using var connection = CreateConnection();
             // update the login timestamp
             await connection.ExecuteAsync(
-                "UPDATE Users SET LastLogin = @Now WHERE Id = @UserId",
-                new { Now = DateTime.now, UserId = userId }
+                "UPDATE Users SET LastLogin = @Now WHERE Id = @Id",
+                new { Now = DateTime.now, Id = id }
             );
         }
 

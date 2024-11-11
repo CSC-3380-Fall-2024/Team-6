@@ -18,7 +18,7 @@ namespace Team6.Data.Repositories
         }
 
         // get a reflection specified by Id
-        public async Task<Reflection?> GetByIdAsync(int id)
+        public async Task<Reflection?> GetByIdAsync(int id, int userId)
         {
             using var connection  = CreateConnection();
             // define the sql query to get the reflection and its document/video 
@@ -27,7 +27,7 @@ namespace Team6.Data.Repositories
                         FROM Reflections 
                         LEFT JOIN ReflectionDocuments on Reflections.DocumentId = ReflectionDocuments.Id
                         LEFT JOIN Videos on Reflections.VideoId = Videos.Id
-                        WHERE Reflections.Id = @Id";
+                        WHERE Reflections.Id = @Id AND Reflections.UserId = @UserId";
                         
             // execute the query asynchronously and map each portion of the reflection  to its object
             var reflections = await connection.QueryAsync<Reflection, ReflectionDocument, Video, Reflection>(
@@ -38,7 +38,7 @@ namespace Team6.Data.Repositories
                     reflection.Video = video;
                     return reflection;
                 },
-                new { Id = id }, // pass the reflection Id to the sql query
+                new { Id = id, UserId = userId}, // pass the reflection Id to the sql query
                 // split the results for the mapping on each Id value
                 splitOn: "Id, Id"
             );
@@ -69,38 +69,66 @@ namespace Team6.Data.Repositories
             );
         }
 
+        // iterate through and get all reflections for a userId
+        public async Task<IEnumerable<Reflection>> GetAllForUserAsync(int userId)
+        {
+            var connection = CreateConnection();
+            return await connection.QueryAsync<Reflection>(
+                "SELECT * FROM Reflections WHERE UserId = @UserId ORDER BY CreatedAt DESC",
+                new { UserId = userId}
+            );
+        }
+
         // create a new reflection entry in the database and returns its Id
-        public async Task<int> CreateAsync(Reflection reflection)
+        public async Task<int> CreateAsync(Reflection reflection, int userId)
         {
             var connection = CreateConnection();
             // define the sql query with the main reflection params and get the id of the last row (most recent addition to table)
-            var sql = @"INSERT INTO Reflections (Title, Content, DocumentId, VideoId)
-                        VALUES (@Title, @Content, @DocumentId, @VideoId);
+            var sql = @"INSERT INTO Reflections (Title, Content, DocumentId, VideoId, UserId)
+                        VALUES (@Title, @Content, @DocumentId, @VideoId, @UserId);
                         SELECT last_insert_rowid();";
             // execute the query asynchronously and return the new reflection Id
-            return await connection.ExecuteScalarAsync<int>(sql, reflection);
+            return await connection.ExecuteScalarAsync<int>(
+                sql,
+                new{
+                    reflection.Title,
+                    reflection.Content,
+                    reflection.DocumentId,
+                    reflection.VideoId,
+                    UserId = userId
+                }
+            );
         }
 
         // update an existing reflection
-        public async Task UpdateAsync(Reflection reflection) 
+        public async Task UpdateAsync(Reflection reflection, int userId) 
         {
             using var connection = CreateConnection();
             // define the sql query to change the reflection params
-            var sql = @"UPDATE Reflections
-                        SET Title = @Title, Content = @Content, DocumentId = @DocumentId, VideoId = @VideoId, LastModified = @LastModified
-                        WHERE Id = @Id";
-            // execute the query asynchronously
-            await connection ExecuteAsync(sql, reflection);
+            await connection.ExecuteAsync(
+                @"UPDATE Reflections
+                SET Title = @Title, Content = @Content, DocumentId = @DocumentId, VideoId = @VideoId, LastModified = @LastModified
+                WHERE Id = @Id AND UserId = @UserId",
+                new {
+                    reflection.Title,
+                    reflection.Content, 
+                    reflection.DocumentId,
+                    reflection.VideoId,
+                    LastModified = DateTime.Now,
+                    reflection.Id,
+                    UserId = userId
+                }
+            );
         }
 
         // delete an existing reflection (specified by id)
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id, int userId)
         {
             using var connection = CreateConnection();
             // execute the query asynchronously
             await connection.ExecuteAsync(
-                "DELETE FROM Reflections WHERE Id = @Id",
-                new { Id = Id }
+                "DELETE FROM Reflections WHERE Id = @Id AND UserId = @UserId",
+                new { Id = id, UserId = userId}
             );
         }
     }
