@@ -38,23 +38,27 @@ namespace Team6.Data.Context
                 -- Calendar Events Table
                 CREATE TABLE IF NOT EXISTS CalendarEvents (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    UserId INTEGER NOT NULL, 
                     Title TEXT NOT NULL,
                     EventDate DATETIME NOT NULL,
                     Description TEXT,
-                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );
 
                 -- Theme Settings Table
                 CREATE TABLE IF NOT EXISTS ThemeSettings (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    UserId TEXT NOT NULL,
+                    UserId INTEGER NOT NULL,
                     IsDarkMode BOOLEAN DEFAULT 0,
-                    LastModified DATETIME DEFAULT CURRENT_TIMESTAMP
+                    LastModified DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );
 
-                -- Reflection Table
+                -- Reflections Table
                 CREATE TABLE IF NOT EXISTS Reflections (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    UserId INTEGER NOT NULL, 
                     Title TEXT NOT NULL,
                     Content TEXT,
                     DocumentId INTEGER,
@@ -62,35 +66,42 @@ namespace Team6.Data.Context
                     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
                     LastModified DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (DocumentId) REFERENCES ReflectionDocuments(Id),
-                    FOREIGN KEY (VideoId) REFERENCES Videos(Id)
+                    FOREIGN KEY (VideoId) REFERENCES Videos(Id),
+                    FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );
 
                 -- Reflection Documents Table
                 CREATE TABLE IF NOT EXISTS ReflectionDocuments (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    UserId INTEGER NOT NULL,
                     Title TEXT NOT NULL,
                     FilePath TEXT NOT NULL,
                     FileType TEXT NOT NULL,
                     FileSize INTEGER NOT NULL,
-                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );
 
                 -- Videos Table
                 CREATE TABLE IF NOT EXISTS Videos (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    UserId INTEGER NOT NULL,
                     Title TEXT NOT NULL,
                     Url TEXT NOT NULL,
                     Provider TEXT NOT NULL,
-                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );
 
                 -- FAQ Table
                 CREATE TABLE IF NOT EXISTS FAQs (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    UserId INTEGER NOT NULL,
                     Question TEXT NOT NULL,
                     Answer TEXT NOT NULL,
                     Category TEXT NOT NULL,
-                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+                    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );";
             command.ExecuteNonQuery();
         }
