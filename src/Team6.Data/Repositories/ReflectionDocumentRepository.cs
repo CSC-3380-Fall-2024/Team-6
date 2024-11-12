@@ -1,7 +1,9 @@
+using System.Data;
 using System.Collections.Generic;
-using System.Threading.Taks;
+using System.Threading.Tasks; 
 using Dapper;
 using Team6.Core.Models;
+using Team6.Data.Context;
 
 namespace Team6.Data.Repositories
 {
@@ -72,5 +74,5 @@ namespace Team6.Data.Repositories
         }
     }
 
-    // get a specific 
+   
 }

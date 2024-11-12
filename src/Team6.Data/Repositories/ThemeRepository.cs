@@ -1,7 +1,9 @@
-using System.Colelctions.Generic;
-using System.Threading.Tasks;
+using System.Data;
+using System.Collections.Generic;
+using System.Threading.Tasks; 
 using Dapper;
 using Team6.Core.Models;
+using Team6.Data.Context;
 
 namespace Team6.Data.Repositories
 {
@@ -20,7 +22,6 @@ namespace Team6.Data.Repositories
         public async Task<ThemeSetting?> GetByUserIdAsync(string userId)
         {
             using var connection = CreateConnection();
-            
         }
     }
 
