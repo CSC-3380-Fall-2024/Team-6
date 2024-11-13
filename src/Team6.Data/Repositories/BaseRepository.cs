@@ -16,7 +16,7 @@ namespace Team6.Data.Repositories
         }
         protected IDbConnection CreateConnection() 
         {
-            return _context.CreateConnection;
+            return _context.CreateConnection();
         }
     }
 }

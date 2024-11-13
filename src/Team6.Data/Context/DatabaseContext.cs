@@ -32,7 +32,13 @@ namespace Team6.Data.Context
                     Email TEXT NOT NULL UNIQUE,
                     PasswordHash TEXT NOT NULL,
                     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    LastLogin DATETIME
+                    LastLogin DATETIME,
+                    LastPasswordChange DATETIME,
+                    FailedLoginAttempts INTEGER DEFAULT 0,
+                    LockoutEnd DATETIME,
+                    CONSTRAINT UniqueUsername UNIQUE (Username),
+                    CONSTRAINT UniqueEMail UNIQUE (Email)
+
                 );
 
                 -- Calendar Events Table
@@ -43,15 +49,6 @@ namespace Team6.Data.Context
                     EventDate DATETIME NOT NULL,
                     Description TEXT,
                     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (UserId) REFERENCES Users(Id)
-                );
-
-                -- Theme Settings Table
-                CREATE TABLE IF NOT EXISTS ThemeSettings (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    UserId INTEGER NOT NULL,
-                    IsDarkMode BOOLEAN DEFAULT 0,
-                    LastModified DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );
 
