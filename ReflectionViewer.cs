@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
 
-public partial class MainForm : Form
+public partial class ReflectionViewer : Form
 {
-    public MainForm()
+    public ReflectionViewer()
     {
         InitializeComponent();
         InitializeUI();
