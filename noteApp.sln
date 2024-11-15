@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "noteApp", "noteApp\noteApp\noteApp.csproj", "{EFE2BC1D-3776-4656-B5C5-F868DD8051D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "noteApp.Client", "noteApp\noteApp.Client\noteApp.Client.csproj", "{AC822D2A-2798-4F16-B810-E3A2C14791C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFE2BC1D-3776-4656-B5C5-F868DD8051D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE2BC1D-3776-4656-B5C5-F868DD8051D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE2BC1D-3776-4656-B5C5-F868DD8051D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE2BC1D-3776-4656-B5C5-F868DD8051D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC822D2A-2798-4F16-B810-E3A2C14791C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC822D2A-2798-4F16-B810-E3A2C14791C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC822D2A-2798-4F16-B810-E3A2C14791C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC822D2A-2798-4F16-B810-E3A2C14791C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

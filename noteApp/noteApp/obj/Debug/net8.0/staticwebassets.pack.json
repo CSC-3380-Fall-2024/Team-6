@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/harrisonrobichaux/RiderProjects/noteApp/noteApp/noteApp/obj/Debug/net8.0/scopedcss/projectbundle/noteApp.bundle.scp.css",
+      "PackagePath": "staticwebassets/noteApp.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/harrisonrobichaux/RiderProjects/noteApp/noteApp/noteApp/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/harrisonrobichaux/RiderProjects/noteApp/noteApp/noteApp/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/harrisonrobichaux/RiderProjects/noteApp/noteApp/noteApp/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/harrisonrobichaux/RiderProjects/noteApp/noteApp/noteApp/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.noteApp.props",
+      "PackagePath": "build\\noteApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.noteApp.props",
+      "PackagePath": "buildMultiTargeting\\noteApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.noteApp.props",
+      "PackagePath": "buildTransitive\\noteApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.noteApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

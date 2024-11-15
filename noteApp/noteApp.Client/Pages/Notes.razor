@@ -1,0 +1,85 @@
+@page "/Notes"
+@inject HttpClient Http
+
+<h3>Notes</h3>
+
+<div>
+    <input @bind="newNoteTitle" placeholder="Title" />
+    <textarea @bind="newNoteContent" placeholder="Content"></textarea>
+    <button @onclick="SaveNote">Save</button>
+</div>
+
+<h4>Existing Notes</h4>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var note in note)
+    {
+        <tr>
+            <td>@note.Title</td>
+            <td>@note.Content</td>
+            <td>
+                <button @onclick="() => EditNote(note)">Edit</button>
+                <button @onclick="() => DeleteNote(note.Id)">Delete</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+@code {
+    private List<Note> note = new List<Note>();
+    private string newNoteTitle;
+    private string newNoteContent;
+    private int? editingNoteId = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadNotes();
+    }
+
+    private async Task LoadNotes()
+    {
+        note = await Http.GetFromJsonAsync<List<Note>>("api/notes");
+    }
+
+    private async Task SaveNote()
+    {
+        var note = new Note { Title = newNoteTitle, Content = newNoteContent };
+
+        if (editingNoteId == null)
+        {
+            await Http.PostAsJsonAsync("api/notes", note);
+        }
+        else
+        {
+            note.Id = editingNoteId.Value;
+            await Http.PutAsJsonAsync($"api/notes/{editingNoteId.Value}", note);
+            editingNoteId = null;
+        }
+
+        newNoteTitle = "";
+        newNoteContent = "";
+        await LoadNotes();
+    }
+
+    private void EditNote(Note note)
+    {
+        newNoteTitle = note.Title;
+        newNoteContent = note.Content;
+        editingNoteId = note.Id;
+    }
+
+    private async Task DeleteNote(int id)
+    {
+        await Http.DeleteAsync($"api/notes/{id}");
+        await LoadNotes();
+    }
+}
