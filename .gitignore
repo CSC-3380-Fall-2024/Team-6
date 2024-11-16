@@ -1,0 +1,5 @@
+bin/
+obj/
+views/
+
+.DS_Store
