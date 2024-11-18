@@ -1,0 +1,27 @@
+@inherits LayoutComponentBase
+
+<div class="layout">
+    <nav>
+        <NavMenu />
+    </nav>
+    <main>
+        @Body
+    </main>
+</div>
+
+<style>
+    .layout {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    nav {
+        background-color: #0078d7;
+        padding: 1rem;
+        color: white;
+    }
+    main {
+        flex-grow: 1;
+        padding: 1rem;
+    }
+</style>
