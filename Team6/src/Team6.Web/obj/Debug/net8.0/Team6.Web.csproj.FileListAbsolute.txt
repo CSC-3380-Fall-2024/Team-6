@@ -52,6 +52,7 @@
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/Debug/net8.0/Team6.Web.MvcApplicationPartsAssemblyInfo.cache
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/Debug/net8.0/Team6.Web.RazorAssemblyInfo.cache
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/Debug/net8.0/Team6.Web.RazorAssemblyInfo.cs
+/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/Debug/net8.0/Team6.Web.sourcelink.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/Debug/net8.0/staticwebassets.build.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/Debug/net8.0/staticwebassets.development.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/Debug/net8.0/staticwebassets/msbuild.Team6.Web.Microsoft.AspNetCore.StaticWebAssets.props

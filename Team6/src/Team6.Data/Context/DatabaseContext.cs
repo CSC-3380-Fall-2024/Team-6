@@ -85,6 +85,7 @@ namespace Team6.Data.Context
                     FilePath TEXT NOT NULL,
                     FileType TEXT NOT NULL,
                     FileSize INTEGER NOT NULL,
+                    PdfContent BLOB,
                     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (UserId) REFERENCES Users(Id)
                 );

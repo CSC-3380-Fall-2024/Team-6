@@ -5,10 +5,14 @@ namespace Team6.Core.Models
     public class ReflectionDocument 
     {
         public int Id { get; set; }
+        public int UserId { get; set; }
         public string Title { get; set; } = string.Empty;
         public string FilePath { get; set; } = string.Empty;
         public string FileType { get; set; } = string.Empty;
         public int FileSize { get; set; }
+        public byte[]? PdfContent { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public User? User { get; set; }
     }
 }

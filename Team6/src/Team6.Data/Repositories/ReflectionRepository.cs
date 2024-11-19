@@ -87,7 +87,7 @@ namespace Team6.Data.Repositories
             // execute the query asynchronously and return the new reflection Id
             return await connection.ExecuteScalarAsync<int>(
                 sql,
-                new{
+                new {
                     reflection.Title,
                     reflection.Content,
                     reflection.DocumentId,

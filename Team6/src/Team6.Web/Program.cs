@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<DatabaseContext>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<NoteRepository>();
+builder.Services.AddScoped<ReflectionRepository>();
+builder.Services.AddScoped<ReflectionDocumentRepository>();
 
 builder.Services.AddLogging(logging =>
 {
