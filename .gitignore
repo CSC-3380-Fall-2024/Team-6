@@ -1,5 +1,7 @@
 bin/
 obj/
-views/
+pages/
+properties/
+wwwroot/
 
 .DS_Store
