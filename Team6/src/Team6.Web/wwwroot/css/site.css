@@ -1,0 +1,87 @@
+/* Base styles */
+html {
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+      font-size: 16px;
+  }
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Forms and buttons */
+.btn:focus, 
+.btn:active:focus, 
+.btn-link.nav-link:focus, 
+.form-control:focus, 
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Login/Register forms */
+.card {
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.card-title {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.form-control {
+  padding: .75rem;
+  border-radius: .375rem;
+}
+
+/* Navigation */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Container spacing */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Alerts */
+.alert {
+  border-radius: .375rem;
+  margin-bottom: 1rem;
+}
+
+/* Form validation */
+.text-danger {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Buttons */
+.btn {
+  padding: .5rem 1rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
