@@ -30,3 +30,24 @@
 </body>
 
 </html>
+
+
+<script>
+    function openPdfInNewTab(pdfBase64Url) {
+        // Convert the base64 URL into a Blob
+        const byteCharacters = atob(pdfBase64Url.split(',')[1]); // Remove the prefix "data:application/pdf;base64,"
+        const byteNumbers = new Array(byteCharacters.length);
+        for (let i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNumbers);
+        const pdfBlob = new Blob([byteArray], { type: 'application/pdf' });
+
+        // Create a blob URL
+        const blobUrl = URL.createObjectURL(pdfBlob);
+
+        // Open the Blob URL in a new tab
+        window.open(blobUrl, '_blank');
+    }
+</script>
+

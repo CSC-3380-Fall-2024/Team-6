@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dkg9gxJXqOE=",
+  "dgSpecHash": "9KrfM59UOJ4=",
   "success": true,
-  "projectFilePath": "/Users/brandonhoang/CSC 3380/Team-6/Team-6/Reflection Viewer/Reflection Viewer/Reflection Viewer.csproj",
+  "projectFilePath": "/Users/brandonhoang/Documents/GitHub/Team-6/Reflection Viewer/Reflection Viewer.csproj",
   "expectedPackageFiles": [
     "/Users/brandonhoang/.nuget/packages/microsoft.aspnetcore.authorization/9.0.0/microsoft.aspnetcore.authorization.9.0.0.nupkg.sha512",
     "/Users/brandonhoang/.nuget/packages/microsoft.aspnetcore.components/9.0.0/microsoft.aspnetcore.components.9.0.0.nupkg.sha512",

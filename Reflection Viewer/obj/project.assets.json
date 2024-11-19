@@ -1762,11 +1762,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/brandonhoang/CSC 3380/Team-6/Team-6/Reflection Viewer/Reflection Viewer/Reflection Viewer.csproj",
+      "projectUniqueName": "/Users/brandonhoang/Documents/GitHub/Team-6/Reflection Viewer/Reflection Viewer.csproj",
       "projectName": "Reflection Viewer",
-      "projectPath": "/Users/brandonhoang/CSC 3380/Team-6/Team-6/Reflection Viewer/Reflection Viewer/Reflection Viewer.csproj",
+      "projectPath": "/Users/brandonhoang/Documents/GitHub/Team-6/Reflection Viewer/Reflection Viewer.csproj",
       "packagesPath": "/Users/brandonhoang/.nuget/packages/",
-      "outputPath": "/Users/brandonhoang/CSC 3380/Team-6/Team-6/Reflection Viewer/Reflection Viewer/obj/",
+      "outputPath": "/Users/brandonhoang/Documents/GitHub/Team-6/Reflection Viewer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/brandonhoang/.nuget/NuGet/NuGet.Config"

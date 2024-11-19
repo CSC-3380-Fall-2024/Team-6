@@ -2,7 +2,24 @@
 @using Microsoft.AspNetCore.Components.Forms
 @inject IJSRuntime JSRuntime
 
-<h1>PDF Uploader and Viewer</h1>
+<h1 style="text-align: center;">Reflection Viewer</h1>
+
+@if (SavedPdfs.Any())
+{
+    <div class="saved-section">
+        <h3>Saved PDFs</h3>
+        <ul>
+            @foreach (var pdf in SavedPdfs)
+            {
+                <li>
+                    <strong>@pdf.Name</strong> (Saved on: @pdf.DateSaved.ToString("yyyy-MM-dd HH:mm"))
+                    <button class="btn btn-primary" @onclick="() => OpenPdfInNewTab(pdf.Url)">View PDF</button>
+                    <button class="btn btn-danger" @onclick="() => DeletePdf(pdf)">Delete</button>
+                </li>
+            }
+        </ul>
+    </div>
+}
 
 <div class="upload-section">
     <h3>Upload a PDF File</h3>
@@ -14,36 +31,31 @@
     <div class="viewer-section">
         <h3>Current PDF Viewer</h3>
         <iframe src="@UploadedPdfUrl" width="100%" height="600px"></iframe>
-        <button class="btn btn-primary" @onclick="SavePdf">Save PDF</button>
-    </div>
-}
 
-@if (SavedPdfs.Any())
-{
-    <div class="saved-section">
-        <h3>Saved PDFs</h3>
-        <ul>
-            @foreach (var pdf in SavedPdfs)
-            {
-                <li>
-                    <button @onclick="() => LoadPdf(pdf)">View Saved PDF @(@SavedPdfs.IndexOf(pdf) + 1)</button>
-                </li>
-            }
-        </ul>
+        <div class="save-section">
+            <input type="text" placeholder="Enter PDF name" @bind="PdfName" />
+            <button class="btn btn-primary" @onclick="SavePdf">Save PDF</button>
+        </div>
     </div>
 }
 
 @code {
     private string? UploadedPdfUrl;
-    private List<string> SavedPdfs = new List<string>();
+    private string PdfName = string.Empty;
+
+    private List<SavedPdf> SavedPdfs = new List<SavedPdf>();
 
     protected override async Task OnInitializedAsync()
     {
+        // Load saved PDFs from local storage
         var savedPdfsJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "savedPdfs");
         if (!string.IsNullOrEmpty(savedPdfsJson))
         {
-            SavedPdfs = System.Text.Json.JsonSerializer.Deserialize<List<string>>(savedPdfsJson) ?? new List<string>();
+            SavedPdfs = System.Text.Json.JsonSerializer.Deserialize<List<SavedPdf>>(savedPdfsJson) ?? new List<SavedPdf>();
         }
+
+        // Sort saved PDFs by date, with the newest at the top
+        SavedPdfs = SavedPdfs.OrderByDescending(pdf => pdf.DateSaved).ToList();
     }
 
     private async Task HandleFileSelected(InputFileChangeEventArgs e)
@@ -68,24 +80,49 @@
 
     private async void SavePdf()
     {
-        if (!string.IsNullOrEmpty(UploadedPdfUrl))
+        if (!string.IsNullOrEmpty(UploadedPdfUrl) && !string.IsNullOrEmpty(PdfName))
         {
-            SavedPdfs.Add(UploadedPdfUrl);
+            // Add to the saved PDFs list with the current timestamp
+            SavedPdfs.Add(new SavedPdf
+            {
+                Name = PdfName,
+                Url = UploadedPdfUrl,
+                DateSaved = DateTime.Now // Save the current date and time
+            });
 
+            // Save to local storage
             var savedPdfsJson = System.Text.Json.JsonSerializer.Serialize(SavedPdfs);
             await JSRuntime.InvokeVoidAsync("localStorage.setItem", "savedPdfs", savedPdfsJson);
+
+            // Clear the input field
+            PdfName = string.Empty;
+
+            // Re-sort the list so the newest PDF is at the top
+            SavedPdfs = SavedPdfs.OrderByDescending(pdf => pdf.DateSaved).ToList();
         }
     }
 
-    private void LoadPdf(string pdfUrl)
+    private async Task OpenPdfInNewTab(string pdfUrl)
     {
-        UploadedPdfUrl = pdfUrl;
+        // Use JSRuntime to open the PDF in a new tab
+        await JSRuntime.InvokeVoidAsync("openPdfInNewTab", pdfUrl);
+    }
+
+    private async void DeletePdf(SavedPdf pdf)
+    {
+        // Remove the selected PDF from the list
+        SavedPdfs.Remove(pdf);
+
+        // Update the local storage to reflect the changes
+        var savedPdfsJson = System.Text.Json.JsonSerializer.Serialize(SavedPdfs);
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "savedPdfs", savedPdfsJson);
+    }
+
+    // Class to hold saved PDF information
+    private class SavedPdf
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Url { get; set; } = string.Empty;
+        public DateTime DateSaved { get; set; } // Property for the date and time
     }
 }
-<h3>Debug: Saved PDF URLs</h3>
-<ul>
-    @foreach (var pdf in SavedPdfs)
-    {
-        <li>@pdf</li>
-    }
-</ul>
