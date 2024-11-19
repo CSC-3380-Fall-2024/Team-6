@@ -1,0 +1,226 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Team6.Web.csproj": {}
+  },
+  "projects": {
+    "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj",
+        "projectName": "Team6.Core",
+        "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj",
+        "packagesPath": "/Users/ashtonberret/.nuget/packages/",
+        "outputPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ashtonberret/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/Team6.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/Team6.Data.csproj",
+        "projectName": "Team6.Data",
+        "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/Team6.Data.csproj",
+        "packagesPath": "/Users/ashtonberret/.nuget/packages/",
+        "outputPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ashtonberret/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj": {
+                "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Team6.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Team6.Web.csproj",
+        "projectName": "Team6.Web",
+        "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Team6.Web.csproj",
+        "packagesPath": "/Users/ashtonberret/.nuget/packages/",
+        "outputPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ashtonberret/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj": {
+                "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj"
+              },
+              "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/Team6.Data.csproj": {
+                "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/Team6.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
