@@ -8,6 +8,7 @@
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/Debug/net8.0/Team6.Data.AssemblyInfoInputs.cache
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/Debug/net8.0/Team6.Data.AssemblyInfo.cs
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/Debug/net8.0/Team6.Data.csproj.CoreCompileInputs.cache
+/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/Debug/net8.0/Team6.Data.sourcelink.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/Debug/net8.0/Team6.Data.csproj.Up2Date
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/Debug/net8.0/Team6.Data.dll
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/obj/Debug/net8.0/refint/Team6.Data.dll

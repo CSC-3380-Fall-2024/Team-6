@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,6 +36,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Pages/Reflections/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVmbGVjdGlvbnMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Pages/Reflections/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVmbGVjdGlvbnMvVXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Pages/Reflections/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVmbGVjdGlvbnMvVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Pages/Shared/_Layout.cshtml]

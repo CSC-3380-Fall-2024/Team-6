@@ -1,0 +1,45 @@
+@page
+@model Team6.Web.Pages.Reflections.UploadModel
+@{
+    ViewData["Title"] = "Upload Reflection";
+}
+
+<div class="container">
+    <h1>Upload a PDF Reflection</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label">Title</label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="PdfFile" class="form-label">PDF File</label>
+                            <input type="file" asp-for="PdfFile" class="form-control" accept=".pdf" />
+                            <span asp-validation-for="PdfFile" class="text-danger"></span>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                        {
+                            <div class="alert alert-danger">@Model.ErrorMessage</div>
+                        }
+
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

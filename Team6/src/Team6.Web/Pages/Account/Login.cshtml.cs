@@ -61,7 +61,7 @@ namespace Team6.Web.Pages.Account
             await HttpContext.SignInAsync("Cookies", principal);
             _logger.LogInformation("User {Username} logged in successfully", Username);
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Reflections/Index");
         }
     }
 }
