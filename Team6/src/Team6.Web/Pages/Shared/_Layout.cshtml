@@ -4,12 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Team6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href=" https://fonts.gstatic.com"- crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm box-shadow mb-3" id="navbar">
             <div class="container">
                 <a class="navbar-brand" asp-page="/Index">Team6</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
@@ -18,17 +21,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-page="/Index">Home</a>
                         </li>
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-page="/Reflections/Index">Reflections</a>
+                                <a class="nav-link" asp-page="/Reflections/Index">Reflections</a>
                             </li>
                         }
-                       
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/FAQ/FAQ">FAQ</a> 
+                            <a class="nav-link" asp-page="/FAQ/FAQ">FAQ</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
@@ -36,17 +38,17 @@
                         {
                             <li class="nav-item">
                                 <form method="post" asp-page="/Account/Logout">
-                                    <button type="submit" class="nav-link text-dark btn btn-link">Logout</button>
+                                    <button type="submit" class="nav-link btn btn-link">Logout</button>
                                 </form>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-page="/Account/Login">Login</a>
+                                <a class="nav-link" asp-page="/Account/Login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-page="/Account/Register">Register</a>
+                                <a class="nav-link" asp-page="/Account/Register">Register</a>
                             </li>
                         }
                     </ul>
@@ -57,13 +59,34 @@
 
     <main role="main" class="pb-3">
         <div class="container">
-            @RenderBody() 
+            @RenderBody()
         </div>
     </main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
+    
+    <script>
+        // Check the user's theme preference and adjust the navbar
+        function updateNavbar() {
+            const navbar = document.getElementById("navbar");
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                navbar.classList.remove("navbar-light");
+                navbar.classList.add("navbar-dark");
+            } else {
+                navbar.classList.remove("navbar-dark");
+                navbar.classList.add("navbar-light");
+            }
+        }
+
+        // Initial check
+        updateNavbar();
+
+        // Listen for changes to the system theme preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            updateNavbar();
+        });
+    </script>
 </body>
 </html>

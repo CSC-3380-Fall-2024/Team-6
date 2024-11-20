@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Team6.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5eeb0c52b0f4295e2ce7fcb722c429a027abe6d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae1462846e551bc163d43d4ad684f7f4dc1602af")]
 [assembly: System.Reflection.AssemblyProductAttribute("Team6.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Team6.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
