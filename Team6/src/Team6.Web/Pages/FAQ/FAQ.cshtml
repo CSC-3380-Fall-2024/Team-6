@@ -1,34 +1,36 @@
 @page
 @model FAQModel
 @{
-    ViewData["Title"] = "Frequently Asked Questions";
+    ViewData["Title"] = "FAQ";
 }
 
-<div class="container">
-    <h1>Frequently Asked Questions</h1>
+<div class="container mt-4">
+    <h1 class="mb-4" style="color: var(--accent-light)">Frequently Asked Questions</h1>
+    
+    <div class="faq-container">
+        <div class="faq-section">
+            <h2>How does dark mode work?</h2>
+            <p>Dark mode automatically syncs with your system settings. Change your device's display settings to update the application's appearance.</p>
+        </div>
 
-    <div class="faq-section">
-        <h2>How does dark mode work?</h2>
-        <p>Dark mode is automatically synced with your system settings. If your device is set to dark mode, the application will match your system preference. To change it, adjust your device's display settings, and the application will update automatically.</p>
-    </div>
+        <div class="faq-section">
+            <h2>How can I view my reflections?</h2>
+            <p>Access your reflections through the "Reflections" tab in the navigation bar. You can view, edit, and manage all your saved reflections there.</p>
+        </div>
 
-    <div class="faq-section">
-        <h2>How can I view my reflections?</h2>
-        <p>You can view your reflections by navigating to the "Reflections" tab on the right column. Here you will find a list of all of your saved reflections. Click on any entry to view or edit it.</p>
-    </div>
+        <div class="faq-section">
+            <h2>How do I manage events in the calendar?</h2>
+            <p>Navigate to the "Calendar" tab to manage events. Click any date to add events with titles, times, and descriptions. Click existing events to edit or delete them.</p>
+        </div>
 
-    <div class="faq-section">
-        <h2>How do I manage events in the calendar?</h2>
-        <p>To manage events, go to the "Calendar" tab. You can click on any date to add an event, specifying details like title, time, and description. To edit or delete an event, simply click on the event in the calendar view.</p>
-    </div>
+        <div class="faq-section">
+            <h2>Can I print or export my calendar?</h2>
+            <p>Yes - use the "Options" button in the Calendar tab to access print functionality. The printable view can also be saved as a PDF.</p>
+        </div>
 
-    <div class="faq-section">
-        <h2>Can I print or export my calendar?</h2>
-        <p>Yes, you can print your calendar. In the "Calendar" tab, click the "Options" button and select "Print calendar." This will open a printable view that you can save as a PDF directly.</p>
-    </div>
-
-    <div class="faq-section">
-        <h2>What should I do if I forget my login details?</h2>
-        <p>If you forget your login details, click on the "Forgot Password" link on the login page. Enter your registered email address, and then there will be instructions on how to reset your password.</p>
+        <div class="faq-section">
+            <h2>What if I forget my login details?</h2>
+            <p>Use the "Forgot Password" link on the login page and follow the password reset instructions sent to your registered email.</p>
+        </div>
     </div>
 </div>
