@@ -13,6 +13,7 @@ namespace Team6.Data.Repositories
         {
         }
 
+        // Get notes for a specific user
         public async Task<List<Note>> GetUserNotesAsync(int userId)
         {
             using var connection = CreateConnection();
@@ -23,6 +24,7 @@ namespace Team6.Data.Repositories
             return notes.ToList();
         }
 
+        // Get a note by ID for a specific user
         public async Task<Note?> GetByIdAsync(int id, int userId)
         {
             using var connection = CreateConnection();
@@ -32,6 +34,7 @@ namespace Team6.Data.Repositories
             );
         }
 
+        // Create a new note
         public async Task<int> CreateNoteAsync(Note note)
         {
             using var connection = CreateConnection();
@@ -43,6 +46,7 @@ namespace Team6.Data.Repositories
             );
         }
 
+        // Update an existing note
         public async Task UpdateNoteAsync(Note note)
         {
             using var connection = CreateConnection();
@@ -54,6 +58,7 @@ namespace Team6.Data.Repositories
             );
         }
 
+        // Delete a note by its ID for a specific user
         public async Task DeleteNoteAsync(int id, int userId)
         {
             using var connection = CreateConnection();

@@ -1691,19 +1691,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ashtonberret/.nuget/packages/": {}
+    "/Users/harrisonrobichaux/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Team6.Web.csproj",
+      "projectUniqueName": "/Users/harrisonrobichaux/RiderProjects/Team-6/Team6/src/Team6.Web/Team6.Web.csproj",
       "projectName": "Team6.Web",
-      "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/Team6.Web.csproj",
-      "packagesPath": "/Users/ashtonberret/.nuget/packages/",
-      "outputPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/obj/",
+      "projectPath": "/Users/harrisonrobichaux/RiderProjects/Team-6/Team6/src/Team6.Web/Team6.Web.csproj",
+      "packagesPath": "/Users/harrisonrobichaux/.nuget/packages/",
+      "outputPath": "/Users/harrisonrobichaux/RiderProjects/Team-6/Team6/src/Team6.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ashtonberret/.nuget/NuGet/NuGet.Config"
+        "/Users/harrisonrobichaux/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1715,11 +1715,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj": {
-              "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Core/Team6.Core.csproj"
+            "/Users/harrisonrobichaux/RiderProjects/Team-6/Team6/src/Team6.Core/Team6.Core.csproj": {
+              "projectPath": "/Users/harrisonrobichaux/RiderProjects/Team-6/Team6/src/Team6.Core/Team6.Core.csproj"
             },
-            "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/Team6.Data.csproj": {
-              "projectPath": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Data/Team6.Data.csproj"
+            "/Users/harrisonrobichaux/RiderProjects/Team-6/Team6/src/Team6.Data/Team6.Data.csproj": {
+              "projectPath": "/Users/harrisonrobichaux/RiderProjects/Team-6/Team6/src/Team6.Data/Team6.Data.csproj"
             }
           }
         }
@@ -1771,7 +1771,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

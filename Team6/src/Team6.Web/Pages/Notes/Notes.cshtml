@@ -1,0 +1,39 @@
+@page
+@using Team6
+@model Team6.Web.Pages.Notes.NotesModel  
+
+<h3>Notes</h3>
+
+<div>
+    <form method="post" asp-page-handler="Save">
+        <input asp-for="NewNote.Title" placeholder="Title" />
+        <textarea asp-for="NewNote.Content" placeholder="Content"></textarea>
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+<h4>Existing Notes</h4>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var note in Model.Notes)  
+    {
+    <tr>
+        <td>@note.Title</td>
+        <td>@note.Content</td>
+        <td>
+            <form method="post">
+                <button type="submit" asp-page-handler="Edit" asp-route-id="@note.Id">Edit</button>
+                <button type="submit" asp-page-handler="Delete" asp-route-id="@note.Id">Delete</button>
+            </form>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>
