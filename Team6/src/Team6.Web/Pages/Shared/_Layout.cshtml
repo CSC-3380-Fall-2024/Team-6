@@ -26,6 +26,10 @@
                                 <a class="nav-link text-dark" asp-page="/Reflections/Index">Reflections</a>
                             </li>
                         }
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/FAQ/FAQ">FAQ</a> 
+                        </li>
                     </ul>
                     <ul class="navbar-nav">
                         @if (User.Identity?.IsAuthenticated == true)
@@ -53,7 +57,7 @@
 
     <main role="main" class="pb-3">
         <div class="container">
-            @RenderBody()
+            @RenderBody() 
         </div>
     </main>
 
