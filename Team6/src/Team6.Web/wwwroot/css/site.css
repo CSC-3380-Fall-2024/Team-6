@@ -16,7 +16,7 @@ html {
   }
 }
 
-/* Add link overrides here, near the top after base styles */
+ 
 a {
   color: var(--accent-medium) !important;
   text-decoration: none;
@@ -260,6 +260,34 @@ textarea:focus {
   padding: 1rem;
 }
 
+/* FAQ */
+.faq-section {
+  background-color: var(--background-elevated-base);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.faq-section:hover {
+  background-color: var(--background-elevated-highlight);
+  border-left: 4px solid var(--accent-medium);
+}
+
+.faq-section h2 {
+  color: var(--accent-light);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.faq-section p {
+  color: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
 /* Alerts */
 .alert-success {
   background-color: var(--background-elevated-base);
@@ -287,4 +315,14 @@ textarea:focus {
 .form-control + .btn-primary,
 form .btn-primary {
   color: black !important;
+}
+
+/* Font selection (Currently not working)*/
+html, body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Add specific elements (currently not working)*/
+h1, h2, h3, h4, h5, h6, p, a, button, input, label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
