@@ -1,8 +1,13 @@
+/* font style */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
 /* Base styles */
 html {
   font-size: 14px;
   position: relative;
   min-height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -11,77 +16,275 @@ html {
   }
 }
 
-body {
-  margin-bottom: 60px;
+/* Add link overrides here, near the top after base styles */
+a {
+  color: var(--accent-medium) !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Forms and buttons */
-.btn:focus, 
-.btn:active:focus, 
-.btn-link.nav-link:focus, 
-.form-control:focus, 
-.form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+a:hover {
+  color: var(--accent-light) !important;
 }
 
-/* Login/Register forms */
-.card {
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
-}
-
-.card-title {
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.form-label {
+/* Specific styling for login/register links in welcome message */
+.text-center a {
+  color: var(--accent-dark) !important;
   font-weight: 500;
 }
 
-.form-control {
-  padding: .75rem;
-  border-radius: .375rem;
+.text-center a:hover {
+  color: var(--accent-light) !important;
 }
 
-/* Navigation */
+
+/* Light Mode Default */
+:root {
+  --background-base: #ffffff;
+  --background-highlight: #f5f5f5;
+  --background-press: #eee;
+  --background-elevated-base: #fff;
+  --background-elevated-highlight: #f7f7f7;
+  --text-base: #000;
+  --text-subdued: #6a6a6a;
+  --essential-base: #000;
+  --essential-subdued: #757575;
+  --input-background: #fff;
+  --table-background: #fff;
+  
+  /* Light mode palette */
+  --accent-lightest: #cee5d8;
+  --accent-light: #b6dec8;
+  --accent-medium: #9bd3b4;
+  --accent-dark: #84c9a3;
+  --accent-darkest: #77bc96;
+  --primary-button: var(--accent-darkest);
+  --primary-button-hover: var(--accent-dark);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+      --background-base: #121212;
+      --background-highlight: #1a1a1a;
+      --background-press: #000;
+      --background-elevated-base: #242424;
+      --background-elevated-highlight: #2a2a2a;
+      --text-base: #fff;
+      --text-subdued: #a7a7a7;
+      --essential-base: #fff;
+      --essential-subdued: #727272;
+      --input-background: #3e3e3e;
+      --table-background: #242424;
+
+      /* Dark mode palette */
+      --accent-lightest: #cee5d8;
+      --accent-light: #b6dec8;
+      --accent-medium: #9bd3b4;
+      --accent-dark: #84c9a3;
+      --accent-darkest: #77bc96;
+      --primary-button: var(--accent-darkest);
+      --primary-button-hover: var(--accent-dark);
+  }
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: var(--background-base);
+  color: var(--text-base);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Navbar */
 .navbar {
-  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  background-color: var(--background-base);
+  border-bottom: 1px solid var(--background-highlight);
 }
 
-.navbar-brand {
-  font-weight: 600;
+.navbar-brand,
+.nav-link,
+.btn-link {
+  color: var(--text-base) !important;
 }
 
-/* Container spacing */
-.container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.navbar-brand:hover {
+  color: var(--accent-light) !important;
 }
 
-/* Alerts */
-.alert {
-  border-radius: .375rem;
-  margin-bottom: 1rem;
+.nav-link:hover,
+.btn-link:hover {
+  color: var(--accent-light) !important;
 }
 
-/* Form validation */
-.text-danger {
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+.nav-link.active {
+  border-bottom: 2px solid var(--accent-medium);
+}
+
+/* Cards */
+.card {
+  background-color: var(--background-elevated-base);
+  border: none;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background-color: var(--background-elevated-highlight);
+  border-left: 4px solid var(--accent-darkest);
+}
+
+.card-body {
+  color: var(--text-base);
+}
+
+/* Forms and Inputs */
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  background-color: #3e3e3e !important;
+  color: var(--text-base) !important;
+  border: 1px solid var(--essential-subdued) !important;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  background-color: #4a4a4a !important;
+  border-color: var(--accent-medium) !important;
+  color: var(--text-base) !important;
+  box-shadow: none !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-subdued) !important;
 }
 
 /* Buttons */
-.btn {
-  padding: .5rem 1rem;
-  font-weight: 500;
-}
-
 .btn-primary {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: var(--primary-button) !important;
+  border-color: var(--primary-button) !important;
+  color: var(--background-base) !important;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background-color: var(--primary-button-hover) !important;
+  border-color: var(--primary-button-hover) !important;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--essential-subdued);
+  color: var(--text-base);
+}
+
+.btn-secondary:hover {
+  background-color: var(--background-elevated-highlight);
+  border-color: var(--accent-medium);
+  color: var(--text-base);
+}
+
+.btn-outline-primary {
+  border-color: var(--accent-medium);
+  color: var(--accent-light);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent-darkest);
+  border-color: var(--accent-darkest);
+  color: var(--background-base);
+}
+
+/* Tables */
+.table {
+  color: var(--text-base) !important;
+  background-color: var(--table-background) !important;
+}
+
+.table thead th {
+  background-color: var(--table-background) !important;
+  color: var(--text-subdued);
+  border-bottom: 1px solid var(--essential-subdued);
+}
+
+.table tbody {
+  background-color: var(--table-background) !important;
+}
+
+.table tbody tr {
+  background-color: var(--table-background) !important;
+  color: var(--text-base) !important;
+  transition: all 0.3s ease;
+}
+
+.table tbody tr td {
+  background-color: var(--table-background) !important;
+  color: var(--text-base) !important;
+}
+
+.table tbody tr:hover {
+  background-color: var(--background-elevated-highlight) !important;
+  border-left: 4px solid var(--accent-darkest);
+}
+
+.table td,
+.table th {
+  border-color: var(--essential-subdued);
+  padding: 1rem;
+}
+
+/* Table buttons */
+.table .btn-sm {
+  margin: 0 0.25rem;
+}
+
+.btn-danger {
+  background-color: #e6a5a5 !important;
+  border-color: #e6a5a5 !important;
+  color: #8b0000 !important;
+}
+
+.btn-danger:hover {
+  background-color: #d98989 !important;
+  border-color: #d98989 !important;
+}
+
+.table-responsive {
+  background-color: var(--table-background);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+/* Alerts */
+.alert-success {
+  background-color: var(--background-elevated-base);
+  border-color: var(--accent-darkest);
+  color: var(--accent-lightest);
+}
+
+.alert-danger {
+  background-color: var(--background-elevated-base);
+  border-color: #e91429;
+  color: #e91429;
+}
+
+/* Validation */
+.text-danger {
+  color: #e91429 !important;
+}
+
+/* Progress bars or loading states */
+.progress-bar {
+  background: linear-gradient(to right, var(--accent-darkest), var(--accent-light));
+}
+
+/* Login Button specific */
+.form-control + .btn-primary,
+form .btn-primary {
+  color: black !important;
 }
