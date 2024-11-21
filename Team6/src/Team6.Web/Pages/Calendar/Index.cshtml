@@ -51,40 +51,60 @@
     </div>
 </div>
 
-<!-- Add Event Modal -->
+<!-- Modal container with fade animation and accessibility attributes -->
 <div class="modal fade" id="addEventModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form method="post" asp-page-handler="AddEvent">
-                <div class="modal-header">
-                    <h5 class="modal-title text-base">Add Event</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label asp-for="NewEvent.Title" class="form-label text-base">Title</label>
-                        <input asp-for="NewEvent.Title" class="form-control modal-input" required />
-                    </div>
-                    <div class="mb-3">
-                        <label asp-for="NewEvent.EventDate" class="form-label text-base">Date and Time</label>
-                        <input asp-for="NewEvent.EventDate" type="datetime-local" 
-                               class="form-control modal-input" required 
-                               value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
-                    </div>
-                    <div class="mb-3">
-                        <label asp-for="NewEvent.Description" class="form-label text-base">Description</label>
-                        <textarea asp-for="NewEvent.Description" class="form-control modal-input"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Event</button>
-                </div>
-            </form>
-        </div>
-    </div>
+   <!-- modal dialog container that centers content -->
+   <div class="modal-dialog">
+       <!-- main modal content wrapper -->
+       <div class="modal-content">
+           <!-- form that posts to AddEvent handler -->
+           <form method="post" asp-page-handler="AddEvent">
+               <!-- modal header with title and close button -->
+               <div class="modal-header">
+                   <h5 class="modal-title text-base">Add Event</h5>
+                   <!-- close button with bootstrap dismiss  -->
+                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+               </div>
+
+               <!-- modal body containing form inputs -->
+               <div class="modal-body">
+                   <!-- title input group -->
+                   <div class="mb-3">
+                       <label asp-for="NewEvent.Title" class="form-label text-base">Title</label>
+                       <!-- required title input bound to model -->
+                       <input asp-for="NewEvent.Title" class="form-control modal-input" required />
+                   </div>
+
+                   <!-- date/time input group -->
+                   <div class="mb-3">
+                       <label asp-for="NewEvent.EventDate" class="form-label text-base">Date and Time</label>
+                       <!-- datetime  initialized to current time -->
+                       <input asp-for="NewEvent.EventDate" type="datetime-local"
+                           class="form-control modal-input" required 
+                           value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+                   </div>
+
+                   <!-- description input group -->
+                   <div class="mb-3">
+                       <label asp-for="NewEvent.Description" class="form-label text-base">Description</label>
+                       <!-- optional description textarea -->
+                       <textarea asp-for="NewEvent.Description" class="form-control modal-input"></textarea>
+                   </div>
+               </div>
+
+               <!-- modal footer with action buttons -->
+               <div class="modal-footer">
+                   <!-- cancel button that dismisses modal -->
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                   <!-- submit button to save event -->
+                   <button type="submit" class="btn btn-primary">Save Event</button>
+               </div>
+           </form>
+       </div>
+   </div>
 </div>
 
+<!-- include calendar javascript -->
 @section Scripts {
-    <script src="~/js/calendar.js"></script>
+   <script src="~/js/calendar.js"></script>
 }

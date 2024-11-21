@@ -1,34 +1,46 @@
 @page
 @model Team6.Web.Pages.Account.LoginModel
+<!-- set page title  -->
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Login";  
 }
 
+<!-- main container for centering  -->
 <div class="container">
+    <!-- center horizontally -->
     <div class="row justify-content-center">
+        <!-- medium width column (std 6 units) -->
         <div class="col-md-6">
+            <!-- card component that incorporates the dynamic color palatte-->
             <div class="card mt-5" style="background-color: var(--bg-color); color: var(--text-color);">
                 <div class="card-body">
+                    <!-- main heading --> 
                     <h2 class="card-title text-center" style="color: var(--text-color);">Login</h2>
+                    <!-- display any error messages if they occur -->
                     @if (!string.IsNullOrEmpty(Model.ErrorMessage))
                     {
                         <div class="alert alert-danger">@Model.ErrorMessage</div>
                     }
+                    <!-- login form using the post method to authenticate users -->
                     <form method="post">
+                        <!-- username input form group-->
                         <div class="mb-3">
                             <label asp-for="Username" class="form-label" style="color: var(--text-color);">Username</label>
                             <input asp-for="Username" class="form-control" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color);" />
                             <span asp-validation-for="Username" class="text-danger"></span>
                         </div>
+                        <!-- password input form group-->
                         <div class="mb-3">
                             <label asp-for="Password" class="form-label" style="color: var(--text-color);">Password</label>
                             <input asp-for="Password" type="password" class="form-control" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color);" />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
+                        <!-- submit button -->
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary" style="background-color: var(--btn-bg-color); border-color: var(--btn-border-color);">Login</button>
                         </div>
                     </form>
+                    <!-- link to register a new account -->
                     <div class="mt-3 text-center">
                         <a asp-page="/Account/Register" style="color: var(--text-color);">Create new account</a>
                     </div>
