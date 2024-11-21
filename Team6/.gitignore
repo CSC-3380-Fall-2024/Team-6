@@ -1,0 +1,16 @@
+# Ignore build folders
+**/bin/
+**/obj/
+
+# Node.js dependencies
+**/node_modules/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Other unnecessary files
+*.db
+*.user
+*.suo
+*.log
