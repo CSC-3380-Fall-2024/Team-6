@@ -1,0 +1,31 @@
+# Build outputs
+bin/
+obj/
+
+# Visual Studio specific
+*.user
+*.suo
+.vs/
+*.vcxproj.user
+*.csproj.user
+
+# Other generated files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.config
+*.db
+*.sln.docstates
+staticwebassets.*
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# IDE settings
+.idea/
+*.iml
