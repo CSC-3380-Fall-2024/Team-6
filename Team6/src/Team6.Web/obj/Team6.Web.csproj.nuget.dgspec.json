@@ -197,6 +197,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "XCalendar.Core": {
+              "target": "Package",
+              "version": "[4.6.0, )"
             }
           },
           "imports": [
