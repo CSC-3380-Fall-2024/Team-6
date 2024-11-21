@@ -9,7 +9,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
     <ProjectReference Include="..\Team6.Core\Team6.Core.csproj" />
     <ProjectReference Include="..\Team6.Data\Team6.Data.csproj" />
-    
+    <PackageReference Include="XCalendar.Core" Version="4.6.0" />    
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
   </ItemGroup>

@@ -20,11 +20,12 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Index">Home</a>
-                        </li>
+                        
                         @if (User.Identity?.IsAuthenticated == true)
                         {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Calendar/Index">Calendar</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-page="/Reflections/Index">Reflections</a>
                             </li>
@@ -69,28 +70,9 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
     
-    <script>
-        // Check the user's theme preference and adjust the navbar
-        function updateNavbar() {
-            const navbar = document.getElementById("navbar");
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                navbar.classList.remove("navbar-light");
-                navbar.classList.add("navbar-dark");
-            } else {
-                navbar.classList.remove("navbar-dark");
-                navbar.classList.add("navbar-light");
-            }
-        }
-
-        // Initial check
-        updateNavbar();
-
-        // Listen for changes to the system theme preference
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-            updateNavbar();
-        });
-    </script>
+    
 </body>
 </html>

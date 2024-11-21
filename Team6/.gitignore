@@ -1,16 +1,31 @@
-# Ignore build folders
-**/bin/
-**/obj/
+# Build outputs
+bin/
+obj/
 
-# Node.js dependencies
-**/node_modules/
-
-# IDE-specific files
-.vscode/
-.idea/
-
-# Other unnecessary files
-*.db
+# Visual Studio specific
 *.user
 *.suo
+.vs/
+*.vcxproj.user
+*.csproj.user
+
+# Other generated files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.config
+*.db
+*.sln.docstates
+staticwebassets.*
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
 *.log
+
+# IDE settings
+.idea/
+*.iml

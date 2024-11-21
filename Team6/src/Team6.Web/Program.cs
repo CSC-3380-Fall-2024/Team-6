@@ -10,6 +10,7 @@ builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<NoteRepository>();
 builder.Services.AddScoped<ReflectionRepository>();
 builder.Services.AddScoped<ReflectionDocumentRepository>();
+builder.Services.AddScoped<CalendarRepository>();
 
 builder.Services.AddLogging(logging =>
 {
@@ -17,11 +18,16 @@ builder.Services.AddLogging(logging =>
     logging.AddDebug();
 });
 
-builder.Services.AddAuthentication("Cookies")
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // session timeout
+        options.SlidingExpiration = true;
+        options.Cookie.IsEssential = true;
+        // make cookies non-persisting on logout so that the user is prompted to re-login each time
         options.LoginPath = "/Account/Login";
-        options.LogoutPath = "/Account/Logout";
+        options.Cookie.Name = ".Team6.Session";
     });
 
 var app = builder.Build();
