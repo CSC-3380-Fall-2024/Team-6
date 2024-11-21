@@ -1,0 +1,54 @@
+@page "{id:int}"
+@model Team6.Web.Pages.Calendar.EventModel
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            @if (Model.IsEditing)
+            {
+                <form method="post">
+                    <input type="hidden" asp-for="Event.Id" />
+                    <div class="mb-3">
+                        <label asp-for="Event.Title" class="form-label">Title</label>
+                        <input asp-for="Event.Title" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Event.EventDate" class="form-label">Date and Time</label>
+                        <input asp-for="Event.EventDate" type="datetime-local" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Event.Description" class="form-label">Description</label>
+                        <textarea asp-for="Event.Description" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <a asp-page="./Event" asp-route-id="@Model.Event.Id" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            }
+            else
+            {
+                <h3 class="card-title">@Model.Event.Title</h3>
+                <p class="event-date">@Model.Event.EventDate.ToString("f")</p>
+                <p class="card-text">@Model.Event.Description</p>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <a asp-page="./Event" asp-route-id="@Model.Event.Id" asp-route-edit="true" 
+                        class="btn btn-primary">Edit</a>
+                        <form method="post" asp-page-handler="Delete" class="d-inline">
+                            <input type="hidden" name="id" value="@Model.Event.Id" />
+                            <button type="submit" class="btn btn-danger" 
+                                    onclick="return confirm('Are you sure you want to delete this event?')">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                    <a asp-page="./Index" class="btn btn-secondary">Back to Calendar</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,6 +1,9 @@
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/appsettings.Development.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/appsettings.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/libman.json
+/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/package-lock.json
+/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/package.json
+/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/tsconfig.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/Team6.Web.staticwebassets.runtime.json
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/Team6.Web
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/Team6.Web.deps.json
@@ -19,6 +22,7 @@
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/SQLitePCLRaw.batteries_v2.dll
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/SQLitePCLRaw.core.dll
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/SQLitePCLRaw.provider.e_sqlite3.dll
+/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/XCalendar.Core.dll
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/runtimes/linux-arm/native/libe_sqlite3.so
 /Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/bin/Debug/net8.0/runtimes/linux-arm64/native/libe_sqlite3.so

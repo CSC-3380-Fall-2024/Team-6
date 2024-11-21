@@ -9,8 +9,28 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/wwwroot/js/TypeScript/calendar.ts",
+      "PackagePath": "staticwebassets/js/TypeScript/calendar.ts"
+    },
+    {
+      "Id": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/wwwroot/js/TypeScript/site.ts",
+      "PackagePath": "staticwebassets/js/TypeScript/site.ts"
+    },
+    {
+      "Id": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/wwwroot/js/calendar.js",
+      "PackagePath": "staticwebassets/js/calendar.js"
+    },
+    {
+      "Id": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/wwwroot/js/calendar.js.map",
+      "PackagePath": "staticwebassets/js/calendar.js.map"
+    },
+    {
       "Id": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/wwwroot/js/site.js.map",
+      "PackagePath": "staticwebassets/js/site.js.map"
     },
     {
       "Id": "/Users/ashtonberret/Team-6-clean/Team6/src/Team6.Web/wwwroot/lib/bootstrap/LICENSE",
