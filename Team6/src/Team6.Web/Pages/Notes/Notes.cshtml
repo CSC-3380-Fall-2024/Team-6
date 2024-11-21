@@ -1,0 +1,73 @@
+@page
+@using Team6
+@model Team6.Web.Pages.Notes.NotesModel
+@{
+    ViewData["Title"] = "Notes";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Notes</h2>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="post" asp-page-handler="Save">
+                <div class="mb-3">
+                    <label asp-for="NewNote.Title" class="form-label">Title</label>
+                    <input asp-for="NewNote.Title" class="form-control modal-input" required />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="NewNote.Content" class="form-label">Content</label>
+                    <textarea asp-for="NewNote.Content" class="form-control modal-input" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Note</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mb-4">Your Notes</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Content</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var note in Model.Notes)
+                        {
+                            <tr>
+                                <td>@note.Title</td>
+                                <td>@note.Content</td>
+                                <td>
+                                    <form method="post" class="d-inline">
+                                        <button type="submit" 
+                                                asp-page-handler="Edit" 
+                                                asp-route-id="@note.Id" 
+                                                class="btn btn-sm btn-secondary">
+                                            Edit
+                                        </button>
+                                        <button type="submit" 
+                                                asp-page-handler="Delete" 
+                                                asp-route-id="@note.Id"
+                                                class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Are you sure you want to delete this note?')">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
