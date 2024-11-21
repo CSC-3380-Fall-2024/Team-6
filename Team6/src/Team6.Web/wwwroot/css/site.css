@@ -431,6 +431,34 @@ textarea:focus {
   box-shadow: none !important;
 }
 
+/* Notes styles */
+.note-form {
+  background-color: var(--background-elevated-base);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.note-table tbody tr:hover {
+  background-color: var(--background-elevated-highlight);
+}
+
+.note-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+textarea.modal-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.table-responsive {
+  background-color: var(--background-elevated-base);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
 /* Alerts */
 .alert-success {
   background-color: var(--background-elevated-base);
