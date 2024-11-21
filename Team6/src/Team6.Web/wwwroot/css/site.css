@@ -143,7 +143,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
-  background-color: #3e3e3e !important;
+  background-color: var(--input-background) !important;
   color: var(--text-base) !important;
   border: 1px solid var(--essential-subdued) !important;
   transition: all 0.3s ease;
@@ -154,7 +154,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus {
-  background-color: #4a4a4a !important;
+  background-color: var(--input-background) !important;
   border-color: var(--accent-medium) !important;
   color: var(--text-base) !important;
   box-shadow: none !important;
@@ -423,6 +423,7 @@ textarea:focus {
 .modal-input {
   background-color: var(--background-base) !important;
   color: var(--text-base) !important;
+  border: 1px solid var(--essential-subdued) !important;
 }
 
 .modal-input:focus {
@@ -431,6 +432,12 @@ textarea:focus {
   box-shadow: none !important;
 }
 
+/* Override any Bootstrap default styles */
+input[type="text"].modal-input,
+input[type="datetime-local"].modal-input,
+textarea.modal-input {
+  background-color: var(--background-base) !important;
+}
 /* Notes styles */
 .note-form {
   background-color: var(--background-elevated-base);
