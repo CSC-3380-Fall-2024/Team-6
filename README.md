@@ -1,6 +1,8 @@
-# Team-6
-## To Run
-Type the following commands into the terminal:
-    dotnet add package XCalendar.Core --version 4.6.0
-    dotnet run
-Note: If it doesn't run, don't push branch to main.
+# Ministry Manager
+## Group Members
+Anthony Raemsch - Project Manager
+Brandon Hoang - Git Master
+Jonathan Anderson - Design Lead
+Harrison Robichaux - Communications Lead
+Ashton Berret - Quality Assurance Tester
+## How to Run
