@@ -16,5 +16,9 @@ namespace Team6.Core.Models
        public List<Note> Notes { get; set; } = new();
        public List<CalendarEvent>? CalendarEvents { get; set; }
        public List<Reflection>? Reflections { get; set; }
+
+       // forgot password properties
+       public string? ResetToken { get; set; }
+       public DateTime? ResetTokenExpires { get; set; }
    }
 }

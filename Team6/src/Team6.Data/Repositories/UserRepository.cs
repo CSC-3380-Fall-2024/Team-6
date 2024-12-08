@@ -103,5 +103,32 @@ namespace Team6.Data.Repositories
 
             return (true, user, Array.Empty<string>());
         }
+
+        public async Task<bool> ResetPasswordAsync(string email, string username, string newPassword)
+        {
+            using var connection = _context.CreateConnection();
+            var user = await connection.QueryFirstOrDefaultAsync<User>(
+                "SELECT * FROM Users WHERE Email = @Email AND Username = @Username",
+                new { Email = email, Username = username });
+
+            if (user == null) 
+            {
+                return false;
+            }
+
+            user.PasswordHash = _passwordHasher.HashPassword(user, newPassword);
+
+            await connection.ExecuteAsync(@"
+                UPDATE Users
+                SET PasswordHash = @PasswordHash,
+                    LastPasswordChange = @Now,
+                    FailedLoginAttempts = 0,
+                    LockoutEnd = NULL
+                WHERE Id = @Id",
+                new { user.PasswordHash, Now = DateTime.UtcNow, user.Id });
+            
+            return true;
+            
+        }
     }
 }
