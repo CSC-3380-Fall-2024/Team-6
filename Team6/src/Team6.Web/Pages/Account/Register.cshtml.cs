@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 using System.ComponentModel.DataAnnotations;
 using Team6.Data.Repositories;
 
@@ -64,8 +66,23 @@ namespace Team6.Web.Pages.Account
                 return Page(); // if failure re-route to registation again
             }
 
+            // create claims for the user to login post registration
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+            };
+
+            var identity = new ClaimsIdentity(claims, "Cookies");
+            var principal = new ClaimsPrincipal(identity);
+
+            // sign in the user after registration
+            await HttpContext.SignInAsync("Cookies", principal);
+
+
+
             _logger.LogInformation("User {Username} registered successfully", Username);
-            return RedirectToPage("/Account/Login");
+            return RedirectToPage("/Calendar/Index");
         }
     }
 }
