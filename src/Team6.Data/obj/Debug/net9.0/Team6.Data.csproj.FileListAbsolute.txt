@@ -1,0 +1,16 @@
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.csproj.AssemblyReference.cache
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.AssemblyInfoInputs.cache
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.AssemblyInfo.cs
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.csproj.CoreCompileInputs.cache
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.sourcelink.json
+/Users/ashtonberret/Team-6/src/Team6.Data/bin/Debug/net9.0/Team6.Data.deps.json
+/Users/ashtonberret/Team-6/src/Team6.Data/bin/Debug/net9.0/Team6.Data.dll
+/Users/ashtonberret/Team-6/src/Team6.Data/bin/Debug/net9.0/Team6.Data.pdb
+/Users/ashtonberret/Team-6/src/Team6.Data/bin/Debug/net9.0/Team6.Core.dll
+/Users/ashtonberret/Team-6/src/Team6.Data/bin/Debug/net9.0/Team6.Core.pdb
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.csproj.Up2Date
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.dll
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/refint/Team6.Data.dll
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/Team6.Data.pdb
+/Users/ashtonberret/Team-6/src/Team6.Data/obj/Debug/net9.0/ref/Team6.Data.dll
