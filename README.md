@@ -100,6 +100,12 @@ If you encounter any errors:
    - The database file (app.db) should be created automatically
    - If issues persist, delete app.db and restart the application
    - The database can be managed/accessed in the terminal via the command sqlite3 app.db
+ 
+- Login errors:
+   - If you encounter any login errors theres a few things you can do to resolve the issue:
+   - make sure your username is at least 3 characters long
+   - make sure your password is at least 6 characters long
+   - make sure your email is in the form of foo@bar.com 
 
 - TypeScript errors:
    - Verify Node.js installation
