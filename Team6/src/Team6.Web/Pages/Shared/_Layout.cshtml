@@ -10,69 +10,137 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm box-shadow mb-3" id="navbar">
-            <div class="container">
-                <a class="navbar-brand" asp-page="/Index">Ministry Manager</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Calendar/Index">Calendar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Reflections/Index">Reflections</a>
-                            </li>
-                        }
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/FAQ/FAQ">FAQ</a>
-                        </li>
 
+<body class="@((Context.Request.Path.Value == "/" || Context.Request.Path.Value == "/Index") ? "home-page" : "not-home-page")">
+
+<header>
+    <nav class="navbar navbar-expand-sm box-shadow mb-3" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" asp-page="/Index">Ministry Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1 left-items">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Notes/Notes">Notes</a>
+                            <a class="nav-link" asp-page="/Calendar/Index">Calendar</a>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                            <li class="nav-item">
-                                <form method="post" asp-page="/Account/Logout">
-                                    <button type="submit" class="nav-link btn btn-link">Logout</button>
-                                </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Account/Login">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Account/Register">Register</a>
-                            </li>
-                        }
-                    </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Reflections/Index">Reflections</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/FAQ/FAQ">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/Notes/Notes">Notes</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav right-items">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li class="nav-item">
+                            <form method="post" asp-page="/Account/Logout">
+                                <button type="submit" class="nav-link btn btn-link">Logout</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Account/Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Account/Register">Register</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="pb-3">
+    <!-- Only show the background and mission section on the home page -->
+    <div class="scroll-section">
+        <div class="text-center">
+            <h1>Welcome to Ministry Manager!</h1>
+            <p>Your solution to streamlined scheduling and organization.</p>
+            <!-- Adjusted the class for uniformity with the feature buttons -->
+            <a class="btn btn-secondary btn-lg" asp-page="/Account/Register">Get Started</a>
+        </div>
+    </div>
+
+    @{
+    bool isHomePage1 = Context.Request.Path.Value == "/" || Context.Request.Path.Value == "/Index";
+    }
+
+    @if (isHomePage1)
+    {
+        <section class="features py-5" id="features">
+            <h2 class="text-center mb-6">Explore Our Features</h2> <!-- Added margin-bottom to the header for more space -->
+            <div class="container">
+                <!-- Added a row here for proper grid structure -->
+                <div class="row mt-6 d-flex justify-content-between"> <!-- Increased margin-top for more space -->
+                    <div class="col-md-3 mb-6">
+                        <a class="btn btn-secondary btn-lg w-100" asp-page="/Calendar/Index">Calendar</a> <!-- Calendar page -->
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <a class="btn btn-secondary btn-lg w-100" asp-page="/Reflections/Index">Reflections</a> <!-- Reflections page -->
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <a class="btn btn-secondary btn-lg w-100" asp-page="/FAQ/FAQ">FAQ</a> <!-- FAQ page -->
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <a class="btn btn-secondary btn-lg w-100" asp-page="/Notes/Notes">Notes</a> <!-- Notes page -->
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <main role="main" class="pb-3">
-        <div class="container">
-            @RenderBody()
+        </section>
+        
+    }
+    
+    <div class="scroll-section-alt">
+        <div class="text-center">
+            <h2>Your Hub for Seamless Ministry Scheduling</h2>
+            <p>Effortlessly manage your schedules, notes, and reflections. Log in to create, update, and stay organized with ease.</p>
+            <p>Log in now to get started with creating notes, viewing reflections, and updating your weekly calendar!</p>
+            <a class="btn btn-secondary btn-lg" asp-page="/Account/Login">Log In</a>
         </div>
-    </main>
+    </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-    
-    
+    <section class="mission-section">
+        <h2>Our Mission</h2>
+        <p>
+            At Ministry Manager, we aim to simplify and enhance the management of your ministry activities. Our platform empowers both ministers and altar servers by providing tools for seamless communication, feedback, and scheduling. Ministers can efficiently guide and critique altar servers, while altar servers receive valuable support to improve their skills. Additionally, Ministry Manager helps connect ministers with potential new altar servers, streamlining the recruitment process. Our mission is to support the growth and effectiveness of your ministry through easy-to-use, impactful solutions.
+        </p>
+    </section>
+
+
+    <!-- Render Body Content -->
+    <div class="container my-5">
+        @RenderBody()
+    </div>
+</main>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Ministry Manager. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:support@ministrymanager.com">support@ministrymanager.com</a></p>
+    </div>
+</footer>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+
 </body>
 </html>

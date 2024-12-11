@@ -12,11 +12,11 @@ html {
 
 @media (min-width: 768px) {
   html {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
 
- 
+
 a {
   color: var(--accent-medium) !important;
   text-decoration: none;
@@ -51,7 +51,7 @@ a:hover {
   --essential-subdued: #757575;
   --input-background: #fff;
   --table-background: #fff;
-  
+
   /* Light mode palette */
   --accent-lightest: #cee5d8;
   --accent-light: #b6dec8;
@@ -65,60 +65,253 @@ a:hover {
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-      --background-base: #121212;
-      --background-highlight: #1a1a1a;
-      --background-press: #000;
-      --background-elevated-base: #242424;
-      --background-elevated-highlight: #2a2a2a;
-      --text-base: #fff;
-      --text-subdued: #a7a7a7;
-      --essential-base: #fff;
-      --essential-subdued: #727272;
-      --input-background: #3e3e3e;
-      --table-background: #242424;
+    --background-base: #121212;
+    --background-highlight: #1a1a1a;
+    --background-press: #000;
+    --background-elevated-base: #242424;
+    --background-elevated-highlight: #2a2a2a;
+    --text-base: #fff;
+    --text-subdued: #a7a7a7;
+    --essential-base: #fff;
+    --essential-subdued: #727272;
+    --input-background: #3e3e3e;
+    --table-background: #242424;
 
-      /* Dark mode palette */
-      --accent-lightest: #cee5d8;
-      --accent-light: #b6dec8;
-      --accent-medium: #9bd3b4;
-      --accent-dark: #84c9a3;
-      --accent-darkest: #77bc96;
-      --primary-button: var(--accent-darkest);
-      --primary-button-hover: var(--accent-dark);
+    /* Dark mode palette */
+    --accent-lightest: #cee5d8;
+    --accent-light: #b6dec8;
+    --accent-medium: #9bd3b4;
+    --accent-dark: #84c9a3;
+    --accent-darkest: #77bc96;
+    --primary-button: var(--accent-darkest);
+    --primary-button-hover: var(--accent-dark);
   }
 }
 
+/* Body */
 body {
   margin-bottom: 60px;
   background-color: var(--background-base);
   color: var(--text-base);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-top: 80px; /* To account for the fixed navbar */
+}
+
+/* Hide sections on non-home pages */
+.home-page .scroll-section,
+.home-page .scroll-section-alt,
+.home-page .mission-section {
+  display: block;
+}
+
+.not-home-page .scroll-section,
+.not-home-page .scroll-section-alt,
+.not-home-page .mission-section {
+  display: none;
 }
 
 /* Navbar */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: var(--background-base);
   border-bottom: 1px solid var(--background-highlight);
+  z-index: 1000;
+  font-size: 1.2rem; /* Increase font size */
+  padding: 1.5rem 1rem; /* Add vertical and horizontal padding */
+  height: auto; /* Adjust navbar height dynamically */
 }
 
-.navbar-brand,
-.nav-link,
-.btn-link {
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-nav.left-items {
+  flex-grow: 1; /* Takes up available space */
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.navbar-nav.right-items {
+  justify-content: flex-end; /* Align items to the right */
+}
+
+/* Navbar link styles */
+.navbar-nav .nav-link {
+  color: var(--text-base) !important; /* Default black text */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.8rem 1.2rem; /* Increase padding around links */
+  font-size: 1.1rem; /* Larger link text */
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-light) !important; /* Green on hover, same as Get Started link */
+}
+
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid var(--accent-medium); /* Optional: to highlight active link */
+}
+
+/* Navbar brand */
+.navbar .navbar-brand {
+  font-size: 1.5rem; /* Bigger brand text */
+  font-weight: bold; /* More prominent */
+}
+
+/* Toggler Button (for smaller screens) */
+.navbar-toggler {
+  font-size: 1.25rem; /* Adjust size */
+  padding: 0.5rem 0.75rem; /* Better spacing */
+}
+
+.footer {
+  border-top: 2px solid var(--background-highlight); /* Adds a border above the footer */
+  background-color: var(--background-base);
+  text-align: center; /* Centers the text inside the footer */
+  margin-top: 20px; /* Adds space between the content above and the footer */
+}
+
+.footer p {
+  margin: 0.5rem 0; /* Adds some spacing between the footer text */
+}
+
+.footer a {
+  color: var(--background-highlight); /* You can adjust this to your theme color */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Adds underline effect when hovering over the link */
+}
+
+/* Get Started Section */
+.scroll-section {
+  padding: 80px 20px;
+  margin-top: 60px; /* Ensure content is not hidden under the fixed navbar */
+  border-bottom: 1px solid var(--background-highlight); /* Add border */
+}
+
+.scroll-section .text-center {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.scroll-section h1 {
+  font-size: 2.5rem; /* Same size as headers in the features section */
+  color: var(--text-base);
+  margin-bottom: 1rem;
+}
+
+.scroll-section p {
+  font-size: 1.2rem; /* Matches subtext size in the features section */
+  color: var(--text-base);
+  margin-bottom: 2rem;
+}
+
+.scroll-section .get-started-link {
   color: var(--text-base) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.navbar-brand:hover {
-  color: var(--accent-light) !important;
+.scroll-section .get-started-link:hover {
+  color: var(--accent-light) !important; /* Green on hover */
 }
 
-.nav-link:hover,
-.btn-link:hover {
-  color: var(--accent-light) !important;
+/* Features Section */
+.features-section {
+  background-color: var(--background-base);
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 60px; /* Ensure content is not hidden under the fixed navbar */
+  border-bottom: 1px solid var(--background-highlight); /* Add border */
+  margin-bottom: 40px; /* Increased space between the features section and scroll section */
 }
 
-.nav-link.active {
-  border-bottom: 2px solid var(--accent-medium);
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-base);
 }
+
+.features-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-base);
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  flex: 0 1 calc(50% - 1rem);
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--background-highlight);
+  border-radius: 8px;
+  background-color: var(--background-highlight);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-link {
+  font-size: 1.25rem;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-button) !important;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.feature-link:hover {
+  color: var(--background-base) !important;
+  background-color: var(--primary-button-hover) !important;
+  text-decoration: none;
+}
+
+/* Scroll Section (Alt) */
+.scroll-section-alt {
+  background-color: white;
+  padding: 80px 20px;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-base);
+  border-bottom: 1px solid var(--background-highlight); /* Add border */
+  border-top: 1px solid var(--background-highlight); /* Add border for scroll section */
+}
+
+/* Mission Section */
+.mission-section {
+  padding: 2rem;
+  text-align: center;
+}
+
 
 /* Cards */
 .card {
