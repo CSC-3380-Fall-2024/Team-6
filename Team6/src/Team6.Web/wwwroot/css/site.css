@@ -173,6 +173,27 @@ body {
   font-size: 1.25rem; /* Adjust size */
   padding: 0.5rem 0.75rem; /* Better spacing */
 }
+
+.footer {
+  border-top: 2px solid var(--background-highlight); /* Adds a border above the footer */
+  background-color: var(--background-base);
+  text-align: center; /* Centers the text inside the footer */
+  margin-top: 20px; /* Adds space between the content above and the footer */
+}
+
+.footer p {
+  margin: 0.5rem 0; /* Adds some spacing between the footer text */
+}
+
+.footer a {
+  color: var(--background-highlight); /* You can adjust this to your theme color */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Adds underline effect when hovering over the link */
+}
+
 /* Get Started Section */
 .scroll-section {
   padding: 80px 20px;
