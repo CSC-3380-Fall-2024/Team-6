@@ -110,7 +110,6 @@ body {
   display: none;
 }
 
-
 /* Navbar */
 .navbar {
   position: fixed;
@@ -208,6 +207,71 @@ body {
 .scroll-section .get-started-link:hover {
   color: var(--accent-light) !important; /* Green on hover */
 }
+
+/* Features Section */
+.features-section {
+  background-color: var(--background-base);
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 60px; /* Ensure content is not hidden under the fixed navbar */
+  border-bottom: 1px solid var(--background-highlight); /* Add border */
+  margin-bottom: 40px; /* Increased space between the features section and scroll section */
+}
+
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-base);
+}
+
+.features-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-base);
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  flex: 0 1 calc(50% - 1rem);
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--background-highlight);
+  border-radius: 8px;
+  background-color: var(--background-highlight);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-link {
+  font-size: 1.25rem;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-button) !important;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.feature-link:hover {
+  color: var(--background-base) !important;
+  background-color: var(--primary-button-hover) !important;
+  text-decoration: none;
+}
+
 
 /* Cards */
 .card {
