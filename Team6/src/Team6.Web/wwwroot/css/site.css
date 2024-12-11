@@ -272,6 +272,19 @@ body {
   text-decoration: none;
 }
 
+/* Scroll Section (Alt) */
+.scroll-section-alt {
+  background-color: white;
+  padding: 80px 20px;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-base);
+  border-bottom: 1px solid var(--background-highlight); /* Add border */
+  border-top: 1px solid var(--background-highlight); /* Add border for scroll section */
+}
+
 
 /* Cards */
 .card {
