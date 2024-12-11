@@ -110,21 +110,31 @@
             <a class="btn btn-secondary btn-lg" asp-page="/Account/Login">Log In</a>
         </div>
     </div>
-    
-    
-    <div class="container">
+
+    <section class="mission-section">
+        <h2>Our Mission</h2>
+        <p>
+            At Ministry Manager, we aim to simplify and enhance the management of your ministry activities. Our platform empowers both ministers and altar servers by providing tools for seamless communication, feedback, and scheduling. Ministers can efficiently guide and critique altar servers, while altar servers receive valuable support to improve their skills. Additionally, Ministry Manager helps connect ministers with potential new altar servers, streamlining the recruitment process. Our mission is to support the growth and effectiveness of your ministry through easy-to-use, impactful solutions.
+        </p>
+    </section>
+
+
+    <!-- Render Body Content -->
+    <div class="container my-5">
         @RenderBody()
     </div>
 </main>
 
-{
+
+
 <footer class="footer">
     <div class="container">
         <p>&copy; 2024 Ministry Manager. All rights reserved.</p>
         <p>Contact us: <a href="mailto:support@ministrymanager.com">support@ministrymanager.com</a></p>
     </div>
 </footer>
-}
+
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

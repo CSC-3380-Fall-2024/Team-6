@@ -306,6 +306,12 @@ body {
   border-top: 1px solid var(--background-highlight); /* Add border for scroll section */
 }
 
+/* Mission Section */
+.mission-section {
+  padding: 2rem;
+  text-align: center;
+}
+
 
 /* Cards */
 .card {
