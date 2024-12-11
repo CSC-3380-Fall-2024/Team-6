@@ -10,69 +10,78 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm box-shadow mb-3" id="navbar">
-            <div class="container">
-                <a class="navbar-brand" asp-page="/Index">Ministry Manager</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Calendar/Index">Calendar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Reflections/Index">Reflections</a>
-                            </li>
-                        }
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/FAQ/FAQ">FAQ</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Notes/Notes">Notes</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                            <li class="nav-item">
-                                <form method="post" asp-page="/Account/Logout">
-                                    <button type="submit" class="nav-link btn btn-link">Logout</button>
-                                </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Account/Login">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Account/Register">Register</a>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+<body class="@((Context.Request.Path.Value == "/" || Context.Request.Path.Value == "/Index") ? "home-page" : "not-home-page")">
 
-    <main role="main" class="pb-3">
+<header>
+    <nav class="navbar navbar-expand-sm box-shadow mb-3" id="navbar">
         <div class="container">
-            @RenderBody()
+            <a class="navbar-brand" asp-page="/Index">Ministry Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1 left-items">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Calendar/Index">Calendar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Reflections/Index">Reflections</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/FAQ/FAQ">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/Notes/Notes">Notes</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav right-items">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li class="nav-item">
+                            <form method="post" asp-page="/Account/Logout">
+                                <button type="submit" class="nav-link btn btn-link">Logout</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Account/Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Account/Register">Register</a>
+                        </li>
+                    }
+                </ul>
+            </div>
         </div>
-    </main>
+    </nav>
+</header>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-    
-    
+<main role="main" class="pb-3">
+    <!-- Only show the background and mission section on the home page -->
+    <div class="scroll-section">
+        <div class="text-center">
+            <h1>Welcome to Ministry Manager!</h1>
+            <p>Your solution to streamlined scheduling and organization.</p>
+            <!-- Adjusted the class for uniformity with the feature buttons -->
+            <a class="btn btn-secondary btn-lg" asp-page="/Account/Register">Get Started</a>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+</main>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+
 </body>
 </html>
