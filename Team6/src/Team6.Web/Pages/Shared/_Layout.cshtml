@@ -72,6 +72,37 @@
             <a class="btn btn-secondary btn-lg" asp-page="/Account/Register">Get Started</a>
         </div>
     </div>
+
+    @{
+    bool isHomePage1 = Context.Request.Path.Value == "/" || Context.Request.Path.Value == "/Index";
+    }
+
+    @if (isHomePage1)
+    {
+    <section class="features py-5" id="features">
+        <h2 class="text-center mb-6">Explore Our Features</h2> <!-- Added margin-bottom to the header for more space -->
+        <div class="container">
+            <!-- Added a row here for proper grid structure -->
+            <div class="row mt-6 d-flex justify-content-between"> <!-- Increased margin-top for more space -->
+                <div class="col-md-3 mb-6">
+                    <a class="btn btn-secondary btn-lg w-100" asp-page="/Calendar/Index">Calendar</a> <!-- Calendar page -->
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a class="btn btn-secondary btn-lg w-100" asp-page="/Reflections/Index">Reflections</a> <!-- Reflections page -->
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a class="btn btn-secondary btn-lg w-100" asp-page="/FAQ/FAQ">FAQ</a> <!-- FAQ page -->
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a class="btn btn-secondary btn-lg w-100" asp-page="/Notes/Notes">Notes</a> <!-- Notes page -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    }
     <div class="container">
         @RenderBody()
     </div>
